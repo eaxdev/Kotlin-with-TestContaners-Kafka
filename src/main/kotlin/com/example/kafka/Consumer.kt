@@ -13,7 +13,7 @@ class Consumer {
 
     private val log: Logger = LoggerFactory.getLogger(Producer::class.java)
 
-    @KafkaListener(topics = ["test-topic"])
+    @KafkaListener(topics = ["test-topic"], groupId = "group-id")
     fun consume(message: String) {
         log.info("Consumed message::$message")
         latch.countDown()

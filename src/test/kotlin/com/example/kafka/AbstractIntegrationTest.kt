@@ -26,7 +26,6 @@ abstract class AbstractIntegrationTest {
         override fun initialize(configurableApplicationContext: ConfigurableApplicationContext) {
             TestPropertyValues.of(
                     "spring.kafka.consumer.bootstrap-servers=" + kafkaContainer.bootstrapServers,
-                    "spring.kafka.consumer.group-id=" + UUID.randomUUID(),
                     "spring.kafka.consumer.auto-offset-reset=earliest",
                     "spring.kafka.consumer.key-deserializer=org.apache.kafka.common.serialization.StringDeserializer",
                     "spring.kafka.consumer.value-deserializer=org.apache.kafka.common.serialization.StringDeserializer",
