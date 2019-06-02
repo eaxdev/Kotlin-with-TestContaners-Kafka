@@ -9,7 +9,7 @@ services:
 language: java
 jdk: openjdk11
 
-script: ./gradlew check
+script: ./gradlew clean check
 notifications:
   email:
     - eaxdev@ya.ru
