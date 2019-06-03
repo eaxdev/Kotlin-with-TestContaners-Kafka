@@ -2,9 +2,9 @@ package com.example.redis
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
+import org.springframework.boot.autoconfigure.data.redis.RedisProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.core.env.Environment
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory
 import org.springframework.data.redis.core.RedisTemplate
@@ -15,13 +15,13 @@ import org.springframework.data.redis.core.RedisTemplate
 class Configuration {
 
     @Autowired
-    private lateinit var env: Environment
+    private lateinit var redisProperties: RedisProperties
 
     @Bean
     fun redisConnectionFactory(): LettuceConnectionFactory {
         val redisConf = RedisStandaloneConfiguration()
-        redisConf.hostName = env.getProperty("spring.redis.host")!!
-        redisConf.port = Integer.parseInt(env.getProperty("spring.redis.port"))
+        redisConf.hostName = redisProperties.host
+        redisConf.port = redisProperties.port
         return LettuceConnectionFactory(redisConf)
     }
 

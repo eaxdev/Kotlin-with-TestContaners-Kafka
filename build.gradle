@@ -33,7 +33,3 @@ compileKotlin {
         freeCompilerArgs = ["-Xjsr305=strict"]
     }
 }
-
-test {
-    testLogging.showStandardStreams = true
-}

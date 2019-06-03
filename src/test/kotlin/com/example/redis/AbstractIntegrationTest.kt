@@ -29,7 +29,6 @@ abstract class AbstractIntegrationTest {
              TestPropertyValues.of(
                      "spring.redis.host=" + redisContainer.containerIpAddress,
                      "spring.redis.port=" + redisContainer.firstMappedPort
-
              ).applyTo(configurableApplicationContext.environment)
         }
     }
