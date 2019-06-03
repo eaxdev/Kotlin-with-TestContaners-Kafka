@@ -1,4 +1,4 @@
-package com.example.kafka
+package com.example.redis
 
 import org.junit.Ignore
 import org.junit.Test
@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner
 @RunWith(SpringRunner::class)
 @SpringBootTest
 @Ignore
-class KafkaApplicationTests {
+class RedisApplicationTests {
 
     @Test
     fun contextLoads() {
